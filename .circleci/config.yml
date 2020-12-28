@@ -65,7 +65,8 @@ workflows:
     jobs:
       - build:
          context: slack-secrets
-      - build_and_test
+      - build_and_test:
+         context: slack-secrets
       - deploy:
           requires:
            - build_and_test

@@ -53,10 +53,10 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
+      - build_and_test
       - deploy:
           requires:
-           - test
+           - build_and_test
           filters:
             branches:
              only:main    

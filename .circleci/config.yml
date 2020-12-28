@@ -1,4 +1,8 @@
 version: 2.1
+
+orbs:
+  slack: circleci/slack@4.1.4
+
 executors:
   node:
     docker:
@@ -47,6 +51,11 @@ jobs:
       - run:
           name: deploy
           command: chmod +x deploy.sh && ./deploy.sh
+      - slack/notify:
+          color: '#42e2f4'
+          mentions: 'USERID1,USERID2,'
+          message: This is a custom message notification
+          webhook: https://hooks.slack.com/services/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
 
 workflows:
   version: 2

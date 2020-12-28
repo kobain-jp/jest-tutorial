@@ -46,7 +46,7 @@ jobs:
           command: yarn install
       - run:
           name: deploy
-          command: ./deploy.sh
+          command: chmod +x deploy.sh && ./deploy.sh
 
 workflows:
   version: 2

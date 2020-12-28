@@ -1,4 +1,5 @@
 https://jestjs.io/docs/ja/getting-started
+https://dev.classmethod.jp/articles/circleci-getting-started-jest/
 
 yarn add --dev jest
 

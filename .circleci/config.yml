@@ -8,6 +8,9 @@ jobs:
       - run:
           name: install dependencies
           command: yarn install
+      - run:
+          name: echo hello
+          command: echo hello
   test:
     docker:
       - image: circleci/node:12

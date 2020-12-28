@@ -36,9 +36,22 @@ jobs:
       - run:
           name: unit test
           command: yarn test
+  deploy:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: install dependencies
+          command: yarn install
+      - run:
+          name: deploy
+          command: ./deploy.sh
+
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
       - test
+      - deploy

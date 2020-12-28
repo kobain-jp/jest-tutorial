@@ -25,7 +25,7 @@ jobs:
           name: install dependencies
           command: yarn install
       - save_modules
-  test:
+  build_and_test:
     executor: node
     steps:
       - checkout
@@ -54,4 +54,10 @@ workflows:
     jobs:
       - build
       - test
-      - deploy
+      - deploy:
+          requires:
+           - test
+          filters:
+            branches:
+             only:main    
+       
